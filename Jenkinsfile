@@ -12,14 +12,14 @@ pipeline {
         stage('Verify Project') {
             steps {
                 echo 'Checking docker-kubernetes-practice project...'
-                sh 'pwd'
-                sh 'ls -la'
+                bat 'pwd'
+                bat 'ls -la'
             }
         }
 
         stage('Verify Docker') {
             steps {
-                sh 'docker --version'
+                bat 'docker --version'
             }
         }
     }
