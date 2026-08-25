@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Checking docker-kubernetes-practice project...'
                 bat 'cd'
-                bat 'ls -la'
+                bat 'dir'
             }
         }
 
