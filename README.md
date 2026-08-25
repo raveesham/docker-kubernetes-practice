@@ -2,22 +2,26 @@
 
 This repository contains my hands-on practice tasks for Docker and Kubernetes.
 
-## Docker Tasks
+## Task Completion
 
-1. Docker Image Creation
-2. Docker Volumes
-3. Docker Networking
-4. Docker Compose
-5. Docker Resource Management
-6. Multi-Stage Docker Build
-7. Docker Container Troubleshooting
-8. Docker Registry / Docker Hub
-9. Docker Cleanup Automation
+### Docker
 
-## Kubernetes Tasks
+- [x] Task 1 — Docker Image Creation
+- [x] Task 2 — Docker Volumes
+- [x] Task 3 — Docker Networking
+- [x] Task 4 — Docker Compose
+- [x] Task 5 — Docker Resource Management
+- [x] Task 6 — Multi-Stage Docker Build
+- [x] Task 7 — Docker Container Troubleshooting
+- [x] Task 8 — Docker Registry / Docker Hub
+- [x] Task 9 — Docker Cleanup Automation
 
-10. Kubernetes Pod Creation
-11. Kubernetes Deployment Creation
+### Kubernetes
+
+- [x] Task 10 — Pod Creation
+- [x] Task 11 — Deployment Creation
+
+> Tasks marked with `[x]` have been completed and verified.
 
 ## Project Structure
 
