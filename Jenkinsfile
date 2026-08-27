@@ -26,15 +26,15 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                echo 'Building my-website:v1...'
-                bat 'docker build -t my-website:v1 task1-html'
+                echo "Building my-website:${env.BUILD_NUMBER}..."
+                bat "docker build -t my-website:${env.BUILD_NUMBER} task1-html"
             }
         }
 
         stage('Run Container Test') {
             steps {
                 echo 'Starting test container...'
-                bat 'docker run -d --name jenkins-my-website-test -p 8084:80 my-website:v1'
+                bat "docker run -d --name jenkins-my-website-test -p 8084:80 my-website:${env.BUILD_NUMBER}"
             }
         }
 
