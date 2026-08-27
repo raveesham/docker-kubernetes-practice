@@ -41,9 +41,9 @@ pipeline {
         stage('Test Website') {
             steps {
                 echo 'Testing Nginx inside the container...'
-                bat  '''
-            powershell -NoProfile -Command "$response = Invoke-WebRequest -UseBasicParsing http://localhost:8084; if ($response.StatusCode -ne 200) { exit 1 }; Write-Host 'Website test successful - HTTP 200'"
-        '''
+                bat '''
+                    powershell -NoProfile -Command "$response = Invoke-WebRequest -UseBasicParsing http://localhost:8084; if ($response.StatusCode -ne 200) { exit 1 }; if ($response.Content -notmatch 'Welcome to My Docker Website') { Write-Host 'Expected website content not found'; exit 1 }; Write-Host 'Website test successful - HTTP 200 and expected content found'"
+                '''
             }
         }
     }
