@@ -34,14 +34,16 @@ pipeline {
         stage('Run Container Test') {
             steps {
                 echo 'Starting test container...'
-                bat 'docker run -d --name jenkins-my-website-test my-website:v1'
+                bat 'docker run -d --name jenkins-my-website-test -p 8084:80 my-website:v1'
             }
         }
 
         stage('Test Website') {
             steps {
-                echo 'Testing Nginx inside the container...'
-                bat 'docker exec jenkins-my-website-test wget -qO- http://localhost'
+                echo 'Testing website from Windows Jenkins...'
+                bat  '''
+            powershell -NoProfile -Command "$response = Invoke-WebRequest -UseBasicParsing http://localhost:8084; if ($response.StatusCode -ne 200) { exit 1 }; Write-Host 'Website test successful - HTTP 200'"
+        '''
             }
         }
     }
